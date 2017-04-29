@@ -18,8 +18,10 @@ class Row {
 })
 export class AppComponent {
   title = 'めっちゃ回すやつ';
-  rate = 1;
-  count = 100000;
+  rate = 10;
+  count = 10000;
+  unitPrice = 500;
+  totalRevenue = 0;
   result: Array<Row> = [];
   startLabel = '回す';
 
@@ -40,6 +42,7 @@ export class AppComponent {
       }
     }
     this.result.sort((a, b) => a.coins - b.coins);
+    this.totalRevenue = 0;
     this.result.forEach((r, index, array) => {
       if (index === 0) {
         r.accumulated = r.count;
@@ -47,7 +50,8 @@ export class AppComponent {
         r.accumulated = array[index - 1].accumulated + r.count;
       }
       r.accumulatedP = r.accumulated / this.count;
-    })
+      this.totalRevenue += r.coins * this.unitPrice * r.count;
+    });
     this.startLabel = '回す';
   }
 }
