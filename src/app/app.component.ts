@@ -17,7 +17,7 @@ class Row {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'めっちゃ回すやつ';
+  title = '出るまで回すやつ';
   rate = 10;
   count = 10000;
   unitPrice = 500;
