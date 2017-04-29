@@ -3,9 +3,24 @@
 </h1>
 
 <md-input-container>
-  <input mdInput placeholder="確率(%)" value="1">
+  <input mdInput placeholder="確率(%)" [(ngModel)]="rate">
 </md-input-container>
 
 <md-input-container>
-  <input mdInput placeholder="試行回数" value="100000">
+  <input mdInput placeholder="挑戦者数" [(ngModel)]="count">
 </md-input-container>
+
+<button md-button (click)="start()">{{startLabel}}</button>
+
+<table>
+  <tr>
+    <th>出るまで回した回数</th>
+    <th>人数</th>
+    <th>累積割合 (%)</th>
+  </tr>
+  <tr *ngFor="let r of result">
+    <td>{{r.coins | number:0}}</td>
+    <td>{{r.count | number:0}}</td>
+    <td>{{r.accumulatedP * 100 | number:'1.2-2'}}</td>
+  </tr>
+</table>
