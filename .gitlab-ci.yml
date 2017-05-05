@@ -1,0 +1,23 @@
+image: node:6
+
+before_script:
+  - node -v
+  - yarn --version
+  - yarn config set cache-folder .yarn
+  - yarn global add @angular/cli
+  - yarn install
+
+cache:
+  untracked: true
+  key: "$CI_PROJECT_ID"
+  paths:
+    - .yarn
+
+lint:
+  script:
+    - yarn lint
+
+build:
+  stage: build
+  script:
+    - ng build -prod
