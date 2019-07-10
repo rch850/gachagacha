@@ -3,20 +3,20 @@
 </h1>
 
 <div>
-  <md-input-container>
-    <input mdInput placeholder="確率(%)" [(ngModel)]="rate">
-  </md-input-container>
+  <mat-input-container>
+    <input matInput placeholder="確率(%)" [(ngModel)]="rate">
+  </mat-input-container>
 
-  <md-input-container>
-    <input mdInput placeholder="挑戦者数" [(ngModel)]="count">
-  </md-input-container>
+  <mat-input-container>
+    <input matInput placeholder="挑戦者数" [(ngModel)]="count">
+  </mat-input-container>
 
-  <button md-button (click)="start()">{{startLabel}}</button>
+  <button mat-button (click)="start()">{{startLabel}}</button>
 </div>
 <div>
-  <md-input-container>
-    <input mdInput placeholder="単価" [(ngModel)]="unitPrice">
-  </md-input-container>
+  <mat-input-container>
+    <input matInput placeholder="単価" [(ngModel)]="unitPrice">
+  </mat-input-container>
   <span>総売上: {{totalRevenue | number:0}}</span>
 </div>
 
