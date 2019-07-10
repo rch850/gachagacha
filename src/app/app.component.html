@@ -3,20 +3,20 @@
 </h1>
 
 <div>
-  <mat-input-container>
+  <mat-form-field>
     <input matInput placeholder="確率(%)" [(ngModel)]="rate">
-  </mat-input-container>
+  </mat-form-field>
 
-  <mat-input-container>
+  <mat-form-field>
     <input matInput placeholder="挑戦者数" [(ngModel)]="count">
-  </mat-input-container>
+  </mat-form-field>
 
   <button mat-button (click)="start()">{{startLabel}}</button>
 </div>
 <div>
-  <mat-input-container>
+  <mat-form-field>
     <input matInput placeholder="単価" [(ngModel)]="unitPrice">
-  </mat-input-container>
+  </mat-form-field>
   <span>総売上: {{totalRevenue | number:0}}</span>
 </div>
 
