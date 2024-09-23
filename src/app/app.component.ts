@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
-import { MatInput } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
-import { MatButton } from '@angular/material/button';
-import { DecimalPipe } from '@angular/common';
+import { Component } from "@angular/core";
+import { MatFormField, MatLabel } from "@angular/material/form-field";
+import { MatInput } from "@angular/material/input";
+import { FormsModule } from "@angular/forms";
+import { MatButton } from "@angular/material/button";
+import { DecimalPipe } from "@angular/common";
 
 class Row {
   coins: number;
@@ -17,23 +17,30 @@ class Row {
 }
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    standalone: true,
-    imports: [MatFormField, MatLabel, MatInput, FormsModule, MatButton, DecimalPipe]
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
+  standalone: true,
+  imports: [
+    MatFormField,
+    MatLabel,
+    MatInput,
+    FormsModule,
+    MatButton,
+    DecimalPipe,
+  ],
 })
 export class AppComponent {
-  title = '出るまで回すやつ';
+  title = "出るまで回すやつ";
   rate = 10;
   count = 10000;
   unitPrice = 500;
   totalRevenue = 0;
-  result: Array<Row> = [];
-  startLabel = '回す';
+  result: Row[] = [];
+  startLabel = "回す";
 
   start() {
-    this.startLabel = '回してます';
+    this.startLabel = "回してます";
     this.result = [];
     for (let i = 0; i < this.count; i++) {
       let x = 1;
@@ -41,7 +48,7 @@ export class AppComponent {
         x++;
       }
 
-      const found = this.result.find(r => r.coins === x);
+      const found = this.result.find((r) => r.coins === x);
       if (found) {
         found.count++;
       } else {
@@ -59,6 +66,6 @@ export class AppComponent {
       r.accumulatedP = r.accumulated / this.count;
       this.totalRevenue += r.coins * this.unitPrice * r.count;
     });
-    this.startLabel = '回す';
+    this.startLabel = "回す";
   }
 }
