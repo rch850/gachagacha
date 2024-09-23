@@ -34,12 +34,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let r of result">
-      <td>{{r.coins | number:0}}</td>
-      <td>{{r.count | number:0}}</td>
-      <td>{{r.accumulatedP * 100 | number:'1.2-2'}}</td>
-      <td>{{unitPrice * r.coins | number:0}}</td>
-      <td>{{unitPrice * r.coins * r.count | number:0}}</td>
-    </tr>
+    @for (r of result; track r) {
+      <tr>
+        <td>{{r.coins | number:0}}</td>
+        <td>{{r.count | number:0}}</td>
+        <td>{{r.accumulatedP * 100 | number:'1.2-2'}}</td>
+        <td>{{unitPrice * r.coins | number:0}}</td>
+        <td>{{unitPrice * r.coins * r.count | number:0}}</td>
+      </tr>
+    }
   </tbody>
 </table>
