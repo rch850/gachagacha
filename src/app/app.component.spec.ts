@@ -1,19 +1,15 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
+import { TestBed, waitForAsync } from "@angular/core/testing";
 
-import { AppComponent } from './app.component';
-import { SharedModule } from 'app/shared/shared.module';
+import { AppComponent } from "./app.component";
 
-describe('AppComponent', () => {
+describe("AppComponent", () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [
-        SharedModule,
-        AppComponent
-    ],
-}).compileComponents();
+      imports: [AppComponent],
+    }).compileComponents();
   }));
 
-  it('should create the app', waitForAsync(() => {
+  it("should create the app", waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
@@ -22,13 +18,15 @@ describe('AppComponent', () => {
   it(`should have as title '出るまで回すやつ'`, waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('出るまで回すやつ');
+    expect(app.title).toEqual("出るまで回すやつ");
   }));
 
-  it('should render title in a h1 tag', waitForAsync(() => {
+  it("should render title in a h1 tag", waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('出るまで回すやつ');
+    expect(compiled.querySelector("h1").textContent).toContain(
+      "出るまで回すやつ"
+    );
   }));
 });
