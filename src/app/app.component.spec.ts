@@ -1,11 +1,12 @@
 import { TestBed, waitForAsync } from "@angular/core/testing";
 
 import { AppComponent } from "./app.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 describe("AppComponent", () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [AppComponent, BrowserAnimationsModule],
     }).compileComponents();
   }));
 
