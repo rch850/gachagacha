@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatButton } from '@angular/material/button';
+import { NgFor, DecimalPipe } from '@angular/common';
 
 class Row {
   coins: number;
@@ -12,9 +17,11 @@ class Row {
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    standalone: true,
+    imports: [MatFormField, MatLabel, MatInput, FormsModule, MatButton, NgFor, DecimalPipe]
 })
 export class AppComponent {
   title = '出るまで回すやつ';

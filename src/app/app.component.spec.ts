@@ -6,13 +6,11 @@ import { SharedModule } from 'app/shared/shared.module';
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        SharedModule
-      ],
-      declarations: [
+    imports: [
+        SharedModule,
         AppComponent
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   }));
 
   it('should create the app', waitForAsync(() => {
