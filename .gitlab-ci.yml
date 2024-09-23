@@ -20,4 +20,4 @@ lint:
 build:
   stage: build
   script:
-    - ng build -prod
+    - ng build --configuration production
