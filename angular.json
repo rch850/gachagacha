@@ -16,7 +16,7 @@
             },
             "index": "src/index.html",
             "tsConfig": "src/tsconfig.app.json",
-            "polyfills": ["src/polyfills.ts"],
+            "polyfills": ["zone.js"],
             "assets": ["src/assets", "src/favicon.ico"],
             "styles": ["src/styles.css"],
             "scripts": [],
@@ -70,7 +70,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "karmaConfig": "./karma.conf.js",
-            "polyfills": ["src/polyfills.ts", "zone.js", "zone.js/testing"],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
             "styles": ["src/styles.css"],
