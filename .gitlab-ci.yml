@@ -1,4 +1,4 @@
-image: node:6
+image: public.ecr.aws/docker/library/node:20
 
 before_script:
   - node -v
