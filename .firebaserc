@@ -1,5 +1,6 @@
 {
   "projects": {
-    "prod": "gachagacha-79277"
+    "prod": "gachagacha-79277",
+    "default": "gachagacha-79277"
   }
 }
